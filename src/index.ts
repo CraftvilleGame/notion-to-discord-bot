@@ -59,6 +59,7 @@ app.post("/:discordChannelId", async (c) => {
 	const title = c.req.query("title");
 	const discordChannelId = c.req.param("discordChannelId");
 	const body = await c.req.json<NotionWebhookBody>();
+	console.log(body)
 
 	await sendDiscordMessage(c.env.DISCORD_BOT_TOKEN, discordChannelId, {
 		embeds: [
